@@ -2,11 +2,11 @@ from django.db import models
 
 # Create your models here.
 class Router(models.Model):
-    title = models.CharField(max_length=100, verbose_name="Title")
-    model = models.CharField(max_length=100, verbose_name="Model")
-    information = models.CharField(verbose_name="Information")
-    configuration = models.CharField(verbose_name="Configuration")
-    img = models.CharField(max_length=250, verbose_name="Image", default=' ', blank=True)
+    title = models.CharField(max_length=100, verbose_name="Title", default='', blank=True)
+    model = models.CharField(max_length=100, verbose_name="Model", default='', blank=True)
+    information = models.CharField(verbose_name="Information", default='', blank=True)
+    configuration = models.CharField(verbose_name="Configuration", default='', blank=True)
+    img = models.CharField(max_length=250, verbose_name="Image", default='', blank=True)
 
 
 
@@ -14,10 +14,10 @@ class Router(models.Model):
         return self.title
     
 class Switch(models.Model):
-    title = models.CharField(max_length=100, verbose_name="Title")
-    model = models.CharField(max_length=100, verbose_name="Model")
-    information = models.CharField(verbose_name="Information")
-    configuration = models.CharField(verbose_name="Configuration")
+    title = models.CharField(max_length=100, verbose_name="Title", default='', blank=True)
+    model = models.CharField(max_length=100, verbose_name="Model", default='', blank=True)
+    information = models.CharField(verbose_name="Information", default='', blank=True)
+    configuration = models.CharField(verbose_name="Configuration", default='', blank=True)
     img = models.CharField(max_length=250, verbose_name="Image", default=' ', blank=True)
 
 
@@ -27,7 +27,7 @@ class Switch(models.Model):
     
 
 
-class Documetation(models.Model):
+class Documentation(models.Model):
     title = models.CharField(max_length=100, verbose_name="Title")
     scheduling = models.CharField(max_length=100, verbose_name="Scheduling")
     information = models.CharField(verbose_name="Information")

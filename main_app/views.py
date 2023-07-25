@@ -12,7 +12,9 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 
 # importing models
-from .models import Router, Switch, Documetation
+from .models import Router, Switch, Documentation
+
+
 
 # Create your views here.
 class Home(TemplateView):
@@ -22,7 +24,11 @@ class Home(TemplateView):
         context = super().get_context_data(**kwargs)
         return context
     
-class RoutertList(TemplateView):
+############ROUTERS############
+############ROUTERS############
+############ROUTERS############
+    
+class RouterList(TemplateView):
     template_name = 'router_list.html'
 
     def get_context_data(self, **kwargs):
@@ -32,12 +38,62 @@ class RoutertList(TemplateView):
         return context
     
 
-class RouterForm(forms.ModelForm):
-    class Meta:
-        model = Router
-        fields = ['title', 'img', 'information', 'configuration']
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+class RouterCreate(CreateView):
+    model = Router
+    # these fields are what the user sees/can input when creating a new character
+    fields = ['title', 'img', 'model', 'information', 'configuration']
+    template_name = 'router_create.html'
+    success_url = '/routers/'
+
+
+
+############SWITCH############
+############SWITCH############
+############SWITCH############
+
+    
+class SwitchList(TemplateView):
+    template_name = 'switch_list.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # the characters object will also give you access to the character class model that's related to it
+        context['switchs'] = Switch.objects.all()
+        return context
+    
+
+
+class SwitchCreate(CreateView):
+    model = Switch
+    # these fields are what the user sees/can input when creating a new character
+    fields = ['title', 'img', 'model', 'information', 'configuration']
+    template_name = 'switch_create.html'
+    success_url = '/switchs/'
+
+
+############DOCUMETATION############
+############DOCUMETATION############
+############DOCUMETATION############
+
+    
+    
+class DocumentationList(TemplateView):
+    template_name = 'documentation_list.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # the characters object will also give you access to the character class model that's related to it
+        context['documentations'] = Documentation.objects.all()
+        return context
+    
+
+
+class DocumentationCreate(CreateView):
+    model = Documentation
+    # these fields are what the user sees/can input when creating a new character
+    fields = ['title', 'img', 'scheduling', 'information', 'vendorContact']
+    template_name = 'documentation_create.html'
+    success_url = '/documentations/'
 
 
