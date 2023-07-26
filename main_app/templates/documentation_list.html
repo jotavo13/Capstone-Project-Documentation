@@ -1,31 +1,31 @@
 {% extends 'base.html' %}
 
-{% block title %}Routers{% endblock %}
+{% block title %}documentations{% endblock %}
 
 {% block content %}
 
 <div class="buttons homepage">
-    <a class="button buttonbackground" href="{% url 'router_create' %}" value="Create Router">Create Router</a>
+    <a class="button buttonbackground" href="{% url 'documentation_create' %}" value="Create Documentation">Create Documentation</a>
 </div>
 
 <div class="gallery">
-    {% for router in routers %}
-    <a href="{% url 'router_detail' router.pk %}">
+    {% for documentation in documentations %}
+    <a href="{% url 'documentation_detail' documentation.pk %}">
         <div class="card">
             <div class="card-image">
                 <figure class="image is-square">
-                    <img src="{{router.img}}" alt="{{router.title}}"/>
+                    <img src="{{documentation.img}}" alt="{{documentation.title}}"/>
                 </figure>
             </div>
             <div class="card-header cardheaderbackground">
-                <p class="card-header-title cardtitle">{{router.title}}</p>
+                <p class="card-header-title cardtitle">{{documentation.title}}</p>
             </div>
         </div>
     </a>
     {% empty %}
     <article class="message">
         <div class="message-header">
-            <p>No Routers Available</p>
+            <p>No Documentations Available</p>
         </div>
     </article>
     {% endfor %}

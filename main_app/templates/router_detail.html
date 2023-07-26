@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="centered">
+
+    <div class="detail__img">
+        <img src="{{router.img}}" alt="{{router.title}}" />
+    </div>
+    <div class="detail__name">
+        <h1 class="title">{{router.title}}</h1>
+    </div>
+    <div class="detail__container">
+    
+        <div class="detail__songs mb-5">
+            <h4 class="title is-4">Info</h4>
+    
+            <!-- character.character_class.all is how you access stat variables/anything in the character_class model -->
+            
+            <!-- class song is used for styling purposes as of now -->
+            <div class="song">
+                <span>
+                    <b>
+                        ‣
+                    </b>
+                </span>
+                <span>
+                    Model
+                </span>
+                <span class="statnumbers">
+                    {{router.model}}
+                </span>
+            </div>
+            <p class="">
+                <span>
+                    Model of the router.
+                </span>
+            </p>
+            <p class="divider"></p>
+            <div class="song">
+                <span>
+                    <b>
+                        ‣
+                    </b>
+                </span>
+                <span>
+                    Description
+                </span>
+                <span class="statnumbers">
+                    {{router.information}}
+                </span>
+            </div>
+            <p class="">
+                <span>
+                    Details about the router.
+                </span>
+            </p>
+            <p class="divider"></p>    
+        </div>
+        <div class="detail__about">
+            <h4 class="title is-4">Description</h4>
+            <p>{{router.information}}</p>
+        </div>
+        <br />
+        <div class="buttons">
+            <a href="{% url 'router_update' router.pk %}" class="button is-info">
+                <span class="icon">
+                    <i class="fas fa-edit"></i>
+                </span>
+            </a>
+            <a href="{% url 'router_delete' router.pk %}" class="button is-danger">
+                <span class="icon">
+                    <i class="fas fa-trash-alt"></i>
+                </span>
+            </a>
+            <a href="{% url 'router_list' %}" class="button is-link">
+                <span class="icon">
+                    <i class="fas fa-arrow-left"></i>
+                </span>
+            </a>
+        </div>
+    
+    </div>
+</div>
+
+{% endblock %}
