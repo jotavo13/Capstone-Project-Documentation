@@ -1,5 +1,6 @@
 
 body {
+    background-image: url(/main_app/image/O9FG550.jpg);
     background-color: blue;
     min-height: 100vh;
     padding-bottom: 50px;
@@ -37,7 +38,7 @@ body {
 }
 
 .buttons .button {
-    color: white;
+    color: rgb(19, 14, 14);
 }
 
 .buttons .is-info:hover,
