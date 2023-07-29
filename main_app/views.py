@@ -41,7 +41,7 @@ class RouterList(TemplateView):
 class RouterCreate(CreateView):
     model = Router
     # these fields are what the user sees/can input when creating a new character
-    fields = ['title', 'img', 'model', 'information', 'configuration']
+    fields = ['title', 'img', 'model', 'information']
     template_name = 'router_create.html'
     success_url = '/routers/'
 
@@ -55,7 +55,7 @@ class RouterDetail(DetailView):
     
 class RouterUpdate(UpdateView):
     model = Router
-    fields = ['title', 'img', 'model', 'information', 'configuration']
+    fields = ['title', 'img', 'model', 'information']
     template_name = 'router_update.html'
     success_url = '/routers/'
 
@@ -84,7 +84,7 @@ class SwitchList(TemplateView):
 class SwitchCreate(CreateView):
     model = Switch
     # these fields are what the user sees/can input when creating a new character
-    fields = ['title', 'img', 'model', 'information', 'configuration']
+    fields = ['title', 'img', 'model', 'information']
     template_name = 'switch_create.html'
     success_url = '/switches/'
 
@@ -99,7 +99,7 @@ class SwitchDetail(DetailView):
     
 class SwitchUpdate(UpdateView):
     model = Switch
-    fields = ['title', 'img', 'model', 'information', 'configuration']
+    fields = ['title', 'img', 'model', 'information']
     template_name = 'switch_update.html'
     success_url = '/switches/'
 
